@@ -1,4 +1,4 @@
-package com.example.wintertravelgallery_minchallgengelan2026.ui.Gallery
+package com.example.wintertravelgallery_minchallgengelan2026.ui.MainScreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.aspectRatio
@@ -12,13 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.wintertravelgallery_minchallgengelan2026.Data.Destination
-import com.example.wintertravelgallery_minchallgengelan2026.ui.TravelCard
+import com.example.wintertravelgallery_minchallgengelan2026.ui.Card.TravelCard
 import com.example.wintertravelgallery_minchallgengelan2026.ui.theme.WinterTravelGalleryMinChallgengeLan2026Theme
 
 @Composable
 fun DisplayDestination(modifier: Modifier = Modifier) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2), // 2 colonnes
+        columns = GridCells.Fixed(2),
         modifier = modifier.padding(16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)

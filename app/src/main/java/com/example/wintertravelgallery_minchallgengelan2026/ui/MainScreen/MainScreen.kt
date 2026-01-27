@@ -1,4 +1,4 @@
-package com.example.wintertravelgallery_minchallgengelan2026.ui.Gallery
+package com.example.wintertravelgallery_minchallgengelan2026.ui.MainScreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -15,7 +15,7 @@ import com.example.wintertravelgallery_minchallgengelan2026.ui.theme.WinterTrave
 import com.example.wintertravelgallery_minchallgengelan2026.ui.theme.bgMain
 
 @Composable
-fun GalleryScreen(innerPadding: PaddingValues) {
+fun MainScreen(innerPadding: PaddingValues) {
     val headerText = stringResource(R.string.header_title)
     Column(
         modifier = Modifier
@@ -23,7 +23,7 @@ fun GalleryScreen(innerPadding: PaddingValues) {
             .padding(innerPadding)
             .background(color = bgMain)
     ) {
-        GalleryHeader(title = headerText)
+        MainHeader(title = headerText)
         DisplayDestination(
             modifier = Modifier.fillMaxSize()
         )
@@ -32,9 +32,9 @@ fun GalleryScreen(innerPadding: PaddingValues) {
 
 @Preview(showBackground = true)
 @Composable
-fun GalleryScreenPreview() {
+fun MainScreenPreview() {
     WinterTravelGalleryMinChallgengeLan2026Theme {
         val paddingValues = PaddingValues(0.dp)
-        GalleryScreen(paddingValues)
+        MainScreen(paddingValues)
     }
 }

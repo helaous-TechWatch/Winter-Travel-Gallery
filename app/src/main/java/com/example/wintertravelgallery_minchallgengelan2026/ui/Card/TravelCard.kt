@@ -1,4 +1,4 @@
-package com.example.wintertravelgallery_minchallgengelan2026.ui
+package com.example.wintertravelgallery_minchallgengelan2026.ui.Card
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

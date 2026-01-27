@@ -1,4 +1,4 @@
-package com.example.wintertravelgallery_minchallgengelan2026.ui.Gallery
+package com.example.wintertravelgallery_minchallgengelan2026.ui.MainScreen
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -15,7 +15,7 @@ import com.example.wintertravelgallery_minchallgengelan2026.R
 import com.example.wintertravelgallery_minchallgengelan2026.ui.theme.WinterTravelGalleryMinChallgengeLan2026Theme
 
 @Composable
-fun GalleryHeader(
+fun MainHeader(
     title: String,
     modifier: Modifier = Modifier
 ) {
@@ -35,6 +35,6 @@ fun GalleryHeader(
 @Composable
 fun GalleryHeaderPreview() {
     WinterTravelGalleryMinChallgengeLan2026Theme {
-        GalleryHeader(stringResource(R.string.header_title))
+        MainHeader(stringResource(R.string.header_title))
     }
 }

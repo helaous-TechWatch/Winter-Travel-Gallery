@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.wintertravelgallery_minchallgengelan2026.ui.Gallery.GalleryScreen
+import com.example.wintertravelgallery_minchallgengelan2026.ui.MainScreen.MainScreen
 import com.example.wintertravelgallery_minchallgengelan2026.ui.theme.WinterTravelGalleryMinChallgengeLan2026Theme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WinterTravelGalleryMinChallgengeLan2026Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    GalleryScreen(innerPadding)
+                    MainScreen(innerPadding)
                 }
             }
         }
@@ -34,6 +34,6 @@ class MainActivity : ComponentActivity() {
 fun GalleryScreenPreview() {
     WinterTravelGalleryMinChallgengeLan2026Theme {
         val paddingValues = PaddingValues(0.dp)
-        GalleryScreen(paddingValues)
+        MainScreen(paddingValues)
     }
 }
