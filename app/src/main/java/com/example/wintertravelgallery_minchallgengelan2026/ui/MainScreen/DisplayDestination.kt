@@ -1,9 +1,9 @@
 package com.example.wintertravelgallery_minchallgengelan2026.ui.MainScreen
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -16,21 +16,28 @@ import com.example.wintertravelgallery_minchallgengelan2026.ui.Card.TravelCard
 import com.example.wintertravelgallery_minchallgengelan2026.ui.theme.WinterTravelGalleryMinChallgengeLan2026Theme
 
 @Composable
-fun DisplayDestination(modifier: Modifier = Modifier) {
+fun DisplayDestination(
+    modifier: Modifier = Modifier,
+    onDestinationClick: (Destination) -> Unit
+) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        modifier = modifier.padding(16.dp),
+        modifier = modifier,
+        contentPadding = PaddingValues(16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        items(Destination.entries.toTypedArray()) { destination ->
+        items(
+            items = Destination.entries,
+            key = { it.name }
+        ) { destination ->
             TravelCard(
                 destination = destination.title,
                 imageUrls = destination.imageUrls,
-                onClick = { /* navigation */ },
+                onClick = { onDestinationClick(destination) },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .aspectRatio(1f) // cartes carrées
+                    .aspectRatio(1f)
             )
         }
     }
@@ -40,6 +47,6 @@ fun DisplayDestination(modifier: Modifier = Modifier) {
 @Composable
 fun DisplayDestinationPreview() {
     WinterTravelGalleryMinChallgengeLan2026Theme {
-        DisplayDestination()
+        DisplayDestination(onDestinationClick = {})
     }
 }

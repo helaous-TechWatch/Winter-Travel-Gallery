@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,20 +21,24 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WinterTravelGalleryMinChallgengeLan2026Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MainScreen(innerPadding)
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    containerColor = MaterialTheme.colorScheme.background
+                ) { innerPadding ->
+                    MainScreen(
+                        innerPadding,
+                        onDestinationClick = { /* Handle destination click if needed */ })
                 }
             }
         }
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun GalleryScreenPreview() {
     WinterTravelGalleryMinChallgengeLan2026Theme {
         val paddingValues = PaddingValues(0.dp)
-        MainScreen(paddingValues)
+        MainScreen(paddingValues, onDestinationClick = { /* Handle destination click if needed */ })
     }
 }

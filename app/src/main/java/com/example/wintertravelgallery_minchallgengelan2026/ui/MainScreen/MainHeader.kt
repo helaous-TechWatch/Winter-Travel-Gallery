@@ -21,10 +21,9 @@ fun MainHeader(
 ) {
     Text(
         text = title.uppercase(),
-        fontSize = 25.sp,
         maxLines = 3,
         overflow = TextOverflow.Ellipsis,
-        style = MaterialTheme.typography.titleLarge,
+        style = MaterialTheme.typography.titleLarge.copy(fontSize = 25.sp),
         modifier = modifier
             .fillMaxWidth()
             .padding(start = 20.dp, top = 40.dp, bottom = 10.dp),

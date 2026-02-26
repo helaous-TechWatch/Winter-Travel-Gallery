@@ -6,7 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -38,54 +37,45 @@ fun TravelCard(
 
     Box(
         modifier = modifier
-            .height(220.dp)
-            .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
-            .clickable { onClick() }
+            .clickable(onClick = onClick)
     ) {
-
-        // 🖼️ Image de fond
         AsyncImage(
             model = coverImage,
             placeholder = painterResource(R.drawable.placholder_image),
             error = painterResource(R.drawable.placholder_image),
-            contentDescription = "Images from $destination",
+            contentDescription = "Cover photo of $destination",
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
         )
 
-        // 🌫️ Dégradé pour lisibilité du texte (optionnel mais pro)
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(
                     Brush.verticalGradient(
-                        colors = listOf(
-                            Color.Transparent,
-                            Color.Black.copy(alpha = 0.6f)
-                        ),
-                        startY = 300f
+                        0f to Color.Transparent,
+                        0.6f to Color.Black.copy(alpha = 0.55f),
+                        1f to Color.Black.copy(alpha = 0.85f)
                     )
                 )
         )
 
-        // 📝 Texte en bas à gauche
         Text(
             text = destination,
             color = Color.White,
             style = MaterialTheme.typography.titleMedium,
-            maxLines = 3,
+            maxLines = 2,
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier
                 .align(Alignment.BottomStart)
                 .padding(16.dp)
-                .fillMaxWidth(0.8f)
+                .fillMaxWidth(0.82f)
         )
 
-        // ➡️ Flèche en bas à droite
         Image(
             painter = painterResource(R.drawable.round_arrow_forward),
-            contentDescription = "Go",
+            contentDescription = null, // décoratif
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(16.dp)
